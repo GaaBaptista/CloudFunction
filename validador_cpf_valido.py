@@ -1,7 +1,4 @@
-import os
 import json
-import flask
-import requests
 
 # funcao que recebe parâmetros de uma sessão do DialogFlow (dentre eles CPF)
 # devolve true caso seja um CPF válido, False c.c.
@@ -49,8 +46,7 @@ def valida_cpf(request):
     result = False
 
 
-  # You can also use the google.cloud.dialogflowcx_v3.types.WebhookRequest protos instead of manually writing the json object
-  # Please see https://googleapis.dev/python/dialogflow/latest/dialogflow_v2/types.html?highlight=webhookresponse#google.cloud.dialogflow_v2.types.WebhookResponse for an overview
+  # formato para devolver para o DialogFlow
   res = {
     "fulfillment_response": {
       "messages": [{"text": {"text": []}}]},
